@@ -3,9 +3,10 @@
 A dark **BlackBerry Hub** for BlackBerry 10, together with the email viewer,
 composer and attachments view, the apps that ignore the system's dark theme.
 
-On the Q10 the system theme is dark out of the box, and the Hub is the bright
-exception. On devices whose default theme is bright (e.g. the Q5), a boot addon
-switches the whole system to dark as well.
+The Hub patches are applied on every device, the Q10 included: there the
+system theme is dark out of the box, but the Hub stays bright without them.
+On devices whose default theme is bright (e.g. the Q5), a boot addon also
+switches the rest of the system to dark.
 
 Tested on a BlackBerry Q10 (SQN100-3) running OS 10.3.3.3216.
 
