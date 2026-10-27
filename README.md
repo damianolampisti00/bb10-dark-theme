@@ -1,7 +1,11 @@
 # BB10 dark theme (BlackBerry Hub included)
 
-A system-wide dark theme for BlackBerry 10, including the apps that ignore it:
-the **BlackBerry Hub**, the email viewer and composer, and the attachments view.
+A dark **BlackBerry Hub** for BlackBerry 10, together with the email viewer,
+composer and attachments view, the apps that ignore the system's dark theme.
+
+On the Q10 the system theme is dark out of the box, and the Hub is the bright
+exception. On devices whose default theme is bright (e.g. the Q5), a boot addon
+switches the whole system to dark as well.
 
 Tested on a BlackBerry Q10 (SQN100-3) running OS 10.3.3.3216.
 
@@ -17,7 +21,7 @@ Tested on a BlackBerry Q10 (SQN100-3) running OS 10.3.3.3216.
 
 | Part | How |
 | --- | --- |
-| Default theme | Cascades apps take their theme from PPS `deviceproperties` (`defaultTheme`) when the app zygote starts. A boot addon sets `black`, restarts the zygote and the apps that are already running. The setting does not survive a reboot, so the addon runs at every boot. At boot, the apps are restarted only when the screen is off and no call is active. |
+| Default theme (only if bright) | Cascades apps take their theme from PPS `deviceproperties` (`defaultTheme`) when the app zygote starts. A boot addon sets `black`, restarts the zygote and the apps that are already running. The setting does not survive a reboot, so the addon runs at every boot. At boot, the apps are restarted only when the screen is off and no call is active. `install.sh` installs the addon only when `defaultTheme` is not already `black`, so not on the Q10. |
 | Apps that force bright | The Hub, email card, composer and attachments card have `CASCADES_THEME=bright` in their manifest's `Entry-Point`: switched to `dark` (`dark_manifests.sh`). |
 | Hub QML | The Hub's QML hardcodes white backgrounds and dark text: backgrounds become `#121212`, text becomes light grey (`hub_dark.sh`). |
 | Hub icons | 103 dark-grey PNG icons are replaced by lightened versions: sent and sending status, attachment, flag, lock, archive, swipe actions, file types, S/MIME (`hub_icons_light.sh`, `hub_icons/`). Grey pixels go from black to `#a8a8a8`; coloured pixels are unchanged. |
@@ -69,8 +73,10 @@ python3 tools/make_icons.py assets hub_icons
 
 - `hub_icons/` contains modified BlackBerry assets, for use on your own device.
   BlackBerry owns the original artwork.
-- Contacts, Calendar, BBM, Chat and RCS also force the bright theme. They are
-  left alone because they have not been checked in dark.
+- Contacts and Calendar force the bright theme too, but they have their own
+  dark background option in their settings: use that.
+- BBM, Chat and RCS also force bright. They are left alone because they have
+  not been checked in dark.
 - The scripts write only to `/apps/sys.pim.*`, `/var/rootdata` and
   `/var/addons/darktheme`. They never touch `/base`.
 

@@ -4,8 +4,9 @@
 # Persistent; originals saved once in /var/rootdata/manifest_backup.
 B=/var/rootdata/manifest_backup
 mkdir -p $B
-# Hub, email viewer/composer, attachments. Contacts, Calendar, BBM, Chat and
-# RCS also force bright, but they have not been checked in dark: not listed.
+# Hub, email viewer/composer, attachments. Contacts and Calendar also force
+# bright but have their own dark background setting; BBM, Chat and RCS have
+# not been checked in dark. None of them is listed.
 for id in sys.pim.messages sys.pim.email.card sys.pim.email.composer.card sys.pim.attachments.card; do
   for D in /apps/$id.*; do
     [ -d "$D" ] || continue
