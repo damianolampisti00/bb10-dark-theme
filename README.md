@@ -73,3 +73,8 @@ python3 tools/make_icons.py assets hub_icons
   left alone because they have not been checked in dark.
 - The scripts write only to `/apps/sys.pim.*`, `/var/rootdata` and
   `/var/addons/darktheme`. They never touch `/base`.
+
+## License
+
+The scripts and tools are released under the [MIT license](LICENSE).
+The images in `hub_icons/` are not covered by it (see Notes).
