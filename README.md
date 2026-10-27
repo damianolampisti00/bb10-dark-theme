@@ -5,6 +5,14 @@ the **BlackBerry Hub**, the email viewer and composer, and the attachments view.
 
 Tested on a BlackBerry Q10 (SQN100-3) running OS 10.3.3.3216.
 
+| Hub | Swipe actions | Menu |
+| --- | --- | --- |
+| ![Hub list](screenshots/hub-list.png) | ![Hub swipe actions](screenshots/hub-swipe.png) | ![Hub menu](screenshots/hub-menu.png) |
+| **Message actions** | **Hub settings** | |
+| ![Message actions](screenshots/hub-actions.png) | ![Hub settings](screenshots/hub-settings.png) | |
+
+(Message senders and previews are blurred.)
+
 ## What it does
 
 | Part | How |
